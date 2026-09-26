@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-
+html, body{
+  overflow-anchor: none;
+}
 :root{
   --bg:#f6f7fb;
   --ink:#171925;
@@ -779,7 +781,7 @@ main{
     margin:0;
     width:100%;
     min-height:100vh;
-    padding:18px 15px 90px;
+    padding:18px 15px 140px;
   }
 
   .top{
