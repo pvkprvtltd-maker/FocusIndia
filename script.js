@@ -102,10 +102,7 @@ function go(page) {
 
   $("#heading").textContent = names[page] || "FocusLab";
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  window.scrollTo(0,0);
 }
 
 $$(".nav").forEach(b => {
