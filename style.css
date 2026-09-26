@@ -9,3 +9,18 @@ main{margin-left:245px;width:calc(100% - 245px);padding:30px 5vw 60px}.top{displ
 .quiz-head{display:flex;justify-content:space-between;align-items:center}.quiz-head h2{font:700 31px "Space Grotesk";margin:6px 0}.quiz-head p{color:var(--muted);font-size:13px}.scorebox{background:#171925;color:#fff;border-radius:14px;padding:14px 20px;text-align:center}.scorebox b{font:700 25px "Space Grotesk";display:block}.scorebox span{font-size:10px;color:#aeb1c0}.quiz{padding:28px;margin-top:20px;max-width:800px}.qtop{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.qtop span:last-child{color:var(--accent);font-weight:700}.quiz h3{font:600 25px/1.35 "Space Grotesk";margin:28px 0}.confidence{padding:14px;background:#f7f7fb;border-radius:11px;margin-bottom:16px}.confidence small{color:var(--muted);font-size:11px}.confidence div{display:flex;gap:7px;margin-top:9px;flex-wrap:wrap}.confidence button{border:1px solid var(--line);background:white;border-radius:8px;padding:7px 10px;font-size:11px}.confidence button.selected{border-color:var(--accent);background:#eeecff}.answers{display:grid;grid-template-columns:1fr 1fr;gap:9px}.answer{border:1px solid var(--line);background:white;text-align:left;border-radius:10px;padding:15px}.answer:hover{border-color:#9a91ff}.answer.correct{border-color:var(--good);background:#effaf5}.answer.wrong{border-color:var(--bad);background:#fff1f2}.feedback{margin-top:14px;padding:13px;border-radius:9px;background:#f6f7fa;font-size:12px;line-height:1.5;display:none}.next{margin-top:12px}
 @media(max-width:800px){.sidebar{width:72px;padding:20px 10px}.brand div:last-child,.nav span,.science,.side-stat{display:none}.brand{margin-bottom:30px}.nav{text-align:center}.nav span{display:none}main{margin-left:72px;width:calc(100% - 72px);padding:20px}.hero{padding:28px}.orb{width:130px;height:130px}.hero h2{font-size:32px}.grid3,.tech-grid,.answers{grid-template-columns:1fr}.notes-layout{grid-template-columns:1fr}.note-list{flex-direction:row;overflow:auto}.note-item{min-width:180px}.top h1{font-size:22px}}
 @media(max-width:520px){.hero{display:block}.orb{margin:25px auto 0}.top{align-items:start}.xp{display:none}.timer-ring{width:230px;height:230px}.timer-ring strong{font-size:45px}}
+.editor-foot > div{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.tech b{
+  display:inline-block;
+  margin-top:10px;
+  cursor:pointer;
+}
+
+.tech b:hover{
+  text-decoration:underline;
+}
