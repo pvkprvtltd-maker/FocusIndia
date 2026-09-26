@@ -1,1 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="FocusIndia — a simple study workspace for focused learning."
+  >
+
+  <title>FocusIndia — Study Smarter</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="brand">
+        <div class="logo">F</div>
+
+        <div>
+          <strong>FocusIndia</strong>
+          <small>study smarter</small>
+        </div>
+      </div>
+
+      <nav class="navigation">
+
+        <button class="nav active" data-page="home">
+          <span class="nav-icon">⌂</span>
+          <span>Home</span>
+        </button>
+
+        <button class="nav" data-page="notes">
+          <span class="nav-icon">▤</span>
+          <span>Notes</span>
+        </button>
+
+        <button class="nav" data-page="timer">
+          <span class="nav-icon">◷</span>
+          <span>Timer</span>
+        </button>
+
+        <button class="nav" data-page="techniques">
+          <span class="nav-icon">✦</span>
+          <span>Techniques</span>
+        </button>
+
+        <button class="nav" data-page="quiz">
+          <span class="nav-icon">◎</span>
+          <span>Quiz</span>
+        </button>
+
+      </nav>
+
+      <div class="side-progress">
+        <small>TODAY</small>
+        <strong id="sideMinutes">0 min</strong>
+
+        <div class="progress-bar">
+          <div id="sideProgress"></div>
+        </div>
+
+        <span id="sideGoal">0 / 60 min focus</span>
+      </div>
+
+      <p class="science-note">
+        Evidence-informed tools for better studying.
+      </p>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- TOP BAR -->
+      <header class="topbar">
+
+        <div>
+          <small id="today"></small>
+          <h1 id="pageHeading">Welcome back.</h1>
+        </div>
+
+        <div class="top-actions">
+          <button class="reset-button" id="resetButton">
+            Reset
+          </button>
+
+          <div class="xp-badge">
+            LVL <strong id="level">1</strong>
+            ·
+            <strong id="xp">0</strong> XP
+          </div>
+        </div>
+
+      </header>
+
+
+      <!-- ================= HOME ================= -->
+
+      <section id="home" class="page active">
+
+        <div class="hero">
+
+          <div class="hero-content">
+
+            <span class="tag">YOUR STUDY HQ</span>
+
+            <h2>
+              Small sessions.<br>
+              <em>Real progress.</em>
+            </h2>
+
+            <p>
+              Focus on one task, test what you remember,
+              and turn mistakes into your next review.
+            </p>
+
+            <button class="primary-button" data-go="timer">
+              Start a focus session →
+            </button>
+
+          </div>
+
+          <div class="focus-orb">
+
+            <span>FOCUS</span>
+
+            <strong id="heroMinutes">0</strong>
+
+            <small>minutes today</small>
+
+          </div>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+          <div class="card stat-card">
+            <small>FOCUS TODAY</small>
+            <strong id="dashboardMinutes">0 min</strong>
+            <span>Goal: 60 min</span>
+          </div>
+
+          <div class="card stat-card">
+            <small>QUIZ ACCURACY</small>
+            <strong id="dashboardAccuracy">—</strong>
+            <span id="dashboardQuiz">No attempts yet</span>
+          </div>
+
+          <div class="card stat-card">
+            <small>STREAK</small>
+            <strong id="dashboardStreak">0 days</strong>
+            <span>Keep showing up.</span>
+          </div>
+
+        </div>
+
+
+        <div class="section-heading">
+          <div>
+            <small>QUICK START</small>
+            <h3>What do you need?</h3>
+          </div>
+        </div>
+
+
+        <div class="quick-grid">
+
+          <button class="card quick-card" data-go="notes">
+            <span class="quick-icon">📝</span>
+            <strong>Make notes</strong>
+            <span>Capture what matters.</span>
+          </button>
+
+          <button class="card quick-card" data-go="quiz">
+            <span class="quick-icon">🎯</span>
+            <strong>Test yourself</strong>
+            <span>Retrieve what you know.</span>
+          </button>
+
+          <button class="card quick-card" data-go="techniques">
+            <span class="quick-icon">🧠</span>
+            <strong>Learn a technique</strong>
+            <span>Study using proven methods.</span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= NOTES ================= -->
+
+      <section id="notes" class="page">
+
+        <div class="section-heading page-heading">
+
+          <div>
+            <small>ACTIVE RECALL FRIENDLY</small>
+            <h2>Your Notes</h2>
+          </div>
+
+          <button class="primary-button" id="newNote">
+            + New note
+          </button>
+
+        </div>
+
+
+        <div class="notes-layout">
+
+          <div class="note-list" id="noteList">
+            <!-- Notes appear here -->
+          </div>
+
+
+          <div class="editor card">
+
+            <input
+              id="noteTitle"
+              type="text"
+              placeholder="Note title"
+            >
+
+            <textarea
+              id="noteBody"
+              placeholder="Write your notes here...
+
+Tip: after writing, close your notes and try to recall the main ideas."
+            ></textarea>
+
+
+            <div class="editor-actions">
+
+              <span id="saveState">
+                Saved locally
+              </span>
+
+              <div class="editor-buttons">
+
+                <button class="secondary-button" id="quizNote">
+                  🎯 Quiz Me
+                </button>
+
+                <button class="primary-button" id="saveNote">
+                  Save note
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= TIMER ================= -->
+
+      <section id="timer" class="page">
+
+        <div class="section-heading page-heading">
+
+          <div>
+            <small>DELIBERATE FOCUS</small>
+            <h2>Focus Timer</h2>
+          </div>
+
+        </div>
+
+
+        <div class="timer-card card">
+
+          <div class="timer-ring">
+
+            <div>
+
+              <small id="timerMode">
+                READY
+              </small>
+
+              <strong id="clock">
+                25:00
+              </strong>
+
+              <span id="timerHint">
+                Choose a focus block.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="timer-controls">
+
+            <button class="primary-button" id="startTimer">
+              ▶ Start
+            </button>
+
+            <button class="secondary-button" id="pauseTimer">
+              ⏸ Pause
+            </button>
+
+            <button class="secondary-button" id="skipTimer">
+              ↻ Reset block
+            </button>
+
+          </div>
+
+
+          <div class="timer-presets">
+
+            <button data-minutes="25">25 min</button>
+            <button data-minutes="45">45 min</button>
+            <button data-minutes="60">60 min</button>
+
+          </div>
+
+
+          <p class="muted">
+            Choose a block that fits your task. There is nothing
+            magical about one particular study length.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= TECHNIQUES ================= -->
+
+      <section id="techniques" class="page">
+
+        <div class="section-heading page-heading">
+
+          <div>
+            <small>LEARN HOW TO LEARN</small>
+            <h2>Study Techniques</h2>
+          </div>
+
+        </div>
+
+
+        <div class="tech-grid">
+
+
+          <article class="card technique-card">
+
+            <span class="tech-number">01</span>
+
+            <h3>Retrieval Practice</h3>
+
+            <p>
+              Close your notes and bring information back
+              from memory before checking the answer.
+            </p>
+
+            <button class="try-button" data-technique="retrieval">
+              Try it →
+            </button>
+
+          </article>
+
+
+          <article class="card technique-card">
+
+            <span class="tech-number">02</span>
+
+            <h3>Spaced Practice</h3>
+
+            <p>
+              Return to material across several sessions
+              instead of doing one giant cram session.
+            </p>
+
+            <button class="try-button" data-technique="spaced">
+              Try it →
+            </button>
+
+          </article>
+
+
+          <article class="card technique-card">
+
+            <span class="tech-number">03</span>
+
+            <h3>Interleaving</h3>
+
+            <p>
+              Mix different types of problems so you have
+              to decide which method each problem needs.
+            </p>
+
+            <button class="try-button" data-technique="interleaving">
+              Try it →
+            </button>
+
+          </article>
+
+
+          <article class="card technique-card">
+
+            <span class="tech-number">04</span>
+
+            <h3>Feynman Check</h3>
+
+            <p>
+              Explain an idea simply, find the gaps,
+              then return to your source and repair them.
+            </p>
+
+            <button class="try-button" data-technique="feynman">
+              Try it →
+            </button>
+
+          </article>
+
+
+          <article class="card technique-card">
+
+            <span class="tech-number">05</span>
+
+            <h3>Elaboration</h3>
+
+            <p>
+              Ask why, how, and what is an example to
+              connect new information with what you know.
+            </p>
+
+            <button class="try-button" data-technique="elaboration">
+              Try it →
+            </button>
+
+          </article>
+
+
+          <article class="card technique-card">
+
+            <span class="tech-number">06</span>
+
+            <h3>Dual Coding</h3>
+
+            <p>
+              Combine words with a useful diagram, timeline,
+              table, flowchart, or concept map.
+            </p>
+
+            <button class="try-button" data-technique="dual">
+              Try it →
+            </button>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= QUIZ ================= -->
+
+      <section id="quiz" class="page">
+
+        <div class="quiz-header">
+
+          <div>
+
+            <small>CONFIDENCE LAB</small>
+
+            <h2>Can you retrieve it?</h2>
+
+            <p>
+              Choose your confidence before answering.
+            </p>
+
+          </div>
+
+
+          <div class="score-box">
+
+            <strong id="quizScore">
+              0
+            </strong>
+
+            <span>
+              correct
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="quiz-card card">
+
+          <div class="quiz-top">
+
+            <span id="questionNumber">
+              Question 1
+            </span>
+
+            <span id="questionTopic">
+              General
+            </span>
+
+          </div>
+
+
+          <h3 id="question">
+            Loading question...
+          </h3>
+
+
+          <div class="confidence-box">
+
+            <small>
+              How confident are you?
+            </small>
+
+            <div class="confidence-buttons">
+
+              <button data-confidence="1">
+                😬 Guessing
+              </button>
+
+              <button data-confidence="2">
+                🙂 Maybe
+              </button>
+
+              <button data-confidence="3">
+                😎 Confident
+              </button>
+
+              <button data-confidence="4">
+                🔥 Very sure
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="answers" id="answers">
+            <!-- Answers appear here -->
+          </div>
+
+
+          <div class="feedback" id="feedback"></div>
+
+
+          <button
+            class="primary-button next-button"
+            id="nextQuestion"
+            hidden
+          >
+            Next question →
+          </button>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+  </div>
+
+
+  <!-- TECHNIQUE POPUP -->
+
+  <div class="modal hidden" id="techniqueModal">
+
+    <div class="modal-card">
+
+      <button class="modal-close" id="closeModal">
+        ×
+      </button>
+
+      <small id="modalLabel">
+        TECHNIQUE
+      </small>
+
+      <h2 id="modalTitle">
+        Try it
+      </h2>
+
+      <p id="modalText"></p>
+
+      <button class="primary-button" id="modalDone">
+        Got it ✓
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+  </html>
