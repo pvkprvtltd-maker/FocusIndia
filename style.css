@@ -24,3 +24,39 @@ main{margin-left:245px;width:calc(100% - 245px);padding:30px 5vw 60px}.top{displ
 .tech b:hover{
   text-decoration:underline;
 }
+@media (max-width: 800px) {
+  main {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px 16px 50px;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .top {
+    margin-bottom: 20px;
+  }
+
+  .section-head,
+  .quiz-head {
+    width: 100%;
+  }
+
+  .tech-grid,
+  .grid3,
+  .notes-layout,
+  .answers {
+    width: 100%;
+  }
+
+  .hero,
+  .card,
+  .quiz,
+  .timer-card {
+    width: 100%;
+  }
+}
